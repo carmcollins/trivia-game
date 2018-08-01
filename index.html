@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Art Trivia Game</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- JAVASCRIPT -->
+    <script src="assets/javascript/app.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Art Trivia Game</h1>
+        <p class="lead">You have 5 seconds to answer each of the questions below. Click the Start button to begin playing!</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- START BUTTON -->
+            <div class="col-md-12 start-button">
+                <button type="button" class="btn btn-primary start-button">Start Game</button>
+            </div>
+            <!-- QUESTIONS & ANSWERS -->
+            <div class="row questions-answers">
+                <div class="col-md-8">
+                    <p>Time Remaining: <span id="time-remaining">10</span></p>
+                    <h1 id="question">Question</h1>
+                    <br>
+                    <button type="button" class="btn btn-primary answerBtn" id="answer1">Answer 1</button>
+                    <button type="button" class="btn btn-primary answerBtn" id="answer2">Answer 2</button>
+                    <button type="button" class="btn btn-primary answerBtn" id="answer3">Answer 3</button>
+                </div>
+                <div class="col-md-4">
+                    <img id="photo" src="" width="100%" />
+                </div>
+            </div>
+            <!-- CORRECT -->
+            <div class="col-md-12 correct">
+                <h1>You Got It!</h1>
+                <p>You must really know your stuff.</p>
+                <img src="assets/images/yay.gif">
+            </div>
+            <!-- INCORRECT -->
+            <div class="col-md-12 incorrect">
+                <h1>So Close...</h1>
+                <p>The correct answer is: <span id="correct-answer"></span></p>
+                <img src="assets/images/so-close.gif">
+            </div>
+            <div class="col-md-12 results">
+                <h1>You got <span id="questions-correct"></span> questions right!</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
