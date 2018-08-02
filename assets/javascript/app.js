@@ -83,36 +83,37 @@ var trivia = [
 
 ];
 
-var count = 0;
+var questionIndex = 0;
 
 var questionsCorrect = 0;
+
+var timeCount;
 
 var counter;
 
 var isAnsweringQuestion = true;
 
 var showInitialQuestion = function() {
-    $("#question").text(trivia[count].question);
-    $("#answer1").text(trivia[count].answer1);
-    $("#answer2").text(trivia[count].answer2);
-    $("#answer3").text(trivia[count].answer3);
-    $("#photo").attr("src", trivia[count].imageURL);
+    $("#question").text(trivia[questionIndex].question);
+    $("#answer1").text(trivia[questionIndex].answer1);
+    $("#answer2").text(trivia[questionIndex].answer2);
+    $("#answer3").text(trivia[questionIndex].answer3);
+    $("#photo").attr("src", trivia[questionIndex].imageURL);
     showTimer(10);
 }
 
 var showNextQuestion = function() {
-    count++;
-    if (count < trivia.length) {
+    questionIndex++;
+    if (questionIndex < trivia.length) {
         isAnsweringQuestion = true;
         $(".questions-answers").show();
         $(".correct").hide();
         $(".incorrect").hide();
-        $("#time-remaining").text("10"); // This isn't working!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        $("#question").text(trivia[count].question);
-        $("#answer1").text(trivia[count].answer1);
-        $("#answer2").text(trivia[count].answer2);
-        $("#answer3").text(trivia[count].answer3);
-        $("#photo").attr("src", trivia[count].imageURL);
+        $("#question").text(trivia[questionIndex].question);
+        $("#answer1").text(trivia[questionIndex].answer1);
+        $("#answer2").text(trivia[questionIndex].answer2);
+        $("#answer3").text(trivia[questionIndex].answer3);
+        $("#photo").attr("src", trivia[questionIndex].imageURL);
         showTimer(10);
     } else {
         $(".questions-answers").hide();
@@ -133,15 +134,15 @@ var showCorrectPage = function() {
 var showIncorrectPage = function() {
     $(".questions-answers").hide();
     $(".incorrect").show();
-    $("#correct-answer").text(trivia[count].correctAnswer);
+    $("#correct-answer").text(trivia[questionIndex].correctAnswer);
     showTimer(5);
     isAnsweringQuestion = false;
 }
 
-var showTimer = function(x) { // Something's wrong with this where it's counting twice?
-    var timeCount = x;
+var showTimer = function(x) {
+    timeCount = x;
+    $("#time-remaining").text(x);
     counter = setInterval(timer, 1000);
-
     function timer() {
         timeCount--;
         if (timeCount === 0) {
@@ -176,12 +177,11 @@ $(".start-button").on("click", function() {
 // When the user clicks on an answer button
 $(".answerBtn").on("click", function() {
     var userChoice = $(this).text();
-    if (userChoice === trivia[count].correctAnswer) {
-        clearInterval(counter);
+    clearInterval(counter);
+    if (userChoice === trivia[questionIndex].correctAnswer) {
         showCorrectPage();
         questionsCorrect++;
     } else {
-        clearInterval(counter);
         showIncorrectPage();
     }
 });
