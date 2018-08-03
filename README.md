@@ -13,7 +13,7 @@ If the user answers incorrectly, they will see a page that says "So Close..." fo
 
 If the user doesn't answer the question within 10 seconds, they will also see a page that says "So Close..." for 3 seconds, and then be directed to the next question.
 
-After the user answers the last question, they will see a page that tells them how many questions they answered correctly and how many questions they answered incorrectly. They will also see button that allows them to play the game again.
+After the user answers the last question, they will see a page that tells them how many questions they answered correctly and how many questions they answered incorrectly. They will also see a button that allows them to play the game again.
 
 ### To Start Playing
 
