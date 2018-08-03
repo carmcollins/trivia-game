@@ -1,4 +1,44 @@
-/* body {
-    background-image: url("../images/matisse2.jpg");
+body {
+    background-image: url("../images/matisse.jpg");
     background-size: cover;
-} */
+    font-family: "Quicksand", sans-serif;
+}
+
+.container {
+    background: #FFF;
+    margin-top: 5%;
+    padding: 60px;
+}
+
+p {
+    line-height: 0.5em;
+}
+
+hr {
+    margin: 30px auto;
+    border: 1px solid #e6005c;
+    width: 60%;
+}
+
+h1 {
+    font-family: "Kirang Haerang", cursive;
+    font-size: 4em;
+
+}
+
+.title {
+    color: #ff8000;
+}
+
+.result-title {
+    color: #66a3ff;
+}
+
+.start-button, .start-button:hover {
+    font-family: "Kirang Haerang", cursive;
+    font-size: 4em;
+    width: 200px;
+    height: 100px;
+    background-color: #66a3ff;
+    border: 0px;
+}
