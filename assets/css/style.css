@@ -7,7 +7,8 @@ body {
 .container {
     background: #FFF;
     margin-top: 5%;
-    padding: 60px;
+    margin-bottom: 5%;
+    padding: 50px;
 }
 
 p {
@@ -38,6 +39,15 @@ h1 {
     font-family: "Kirang Haerang", cursive;
     font-size: 4em;
     width: 200px;
+    height: 100px;
+    background-color: #66a3ff;
+    border: 0px;
+}
+
+.play-again, .play-again:hover {
+    font-family: "Kirang Haerang", cursive;
+    font-size: 4em;
+    width: 300px;
     height: 100px;
     background-color: #66a3ff;
     border: 0px;

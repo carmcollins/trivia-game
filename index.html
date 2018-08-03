@@ -22,7 +22,6 @@
             <!-- TITLE & INSTRUCTIONS -->
             <div class="col-md-12 text-center">
                 <h1 class="title">Art Trivia Game</h1>
-                <br>
                 <p>You will have 10 seconds to answer each of the questions below.</p>
                 <p>Get all 10 questions correct and you're a certified art genius!</p>
                 <p>Click the Start button to begin.</p>
@@ -47,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mt-5">
-                    <img id="photo" src="" width="100%" />
+                    <img id="photo" src="" alt="art photo" width="100%" />
                 </div>
             </div>
             <!-- CORRECT -->
@@ -55,17 +54,20 @@
                 <h1 class="result-title">You Got It!</h1>
                 <p>You must really know your stuff.</p>
                 <br>
-                <img src="assets/images/yay.gif">
+                <img src="assets/images/yay.gif" alt="yay gif">
             </div>
             <!-- INCORRECT -->
             <div class="col-md-12 incorrect text-center">
                 <h1 class="result-title">So Close...</h1>
                 <p>The correct answer is: <span id="correct-answer"></span></p>
                 <br>
-                <img src="assets/images/so-close.gif">
+                <img src="assets/images/so-close.gif" alt="so close gif">
             </div>
             <div class="col-md-12 results text-center">
                 <h1>You got <span id="questions-correct"></span> questions right!</h1>
+                <h1>You got <span id="questions-incorrect"></span> questions wrong.</h1>
+                <br>
+                <button type="button" class="btn btn-primary play-again">Play Again</button>
             </div>
         </div>
     </div>

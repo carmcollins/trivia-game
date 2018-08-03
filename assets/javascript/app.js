@@ -87,6 +87,8 @@ var questionIndex = 0;
 
 var questionsCorrect = 0;
 
+var questionsIncorrect = 0;
+
 var timeCount;
 
 var counter;
@@ -121,13 +123,14 @@ var showNextQuestion = function() {
         $(".incorrect").hide();
         $(".results").show();
         $("#questions-correct").text(questionsCorrect);
+        $("#questions-incorrect").text(questionsIncorrect);
     }
 }
 
 var showCorrectPage = function() {
     $(".questions-answers").hide();
     $(".correct").show();
-    showTimer(5);
+    showTimer(3);
     isAnsweringQuestion = false;
 }
 
@@ -135,7 +138,7 @@ var showIncorrectPage = function() {
     $(".questions-answers").hide();
     $(".incorrect").show();
     $("#correct-answer").text(trivia[questionIndex].correctAnswer);
-    showTimer(5);
+    showTimer(3);
     isAnsweringQuestion = false;
 }
 
@@ -183,7 +186,18 @@ $(".answerBtn").on("click", function() {
         questionsCorrect++;
     } else {
         showIncorrectPage();
+        questionsIncorrect++;
     }
+});
+
+// When the user clicks on the play again button
+$(".play-again").on("click", function() {
+    $(".results").hide();
+    questionIndex = 0;
+    $(".questions-answers").show();
+    showInitialQuestion();
+    questionsCorrect = 0;
+    questionsIncorrect = 0;
 });
 
 });
