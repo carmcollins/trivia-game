@@ -1,5 +1,4 @@
 # Art Trivia Game
-Homework #5
 
 ### About This Projcet
 
@@ -18,3 +17,5 @@ After the user answers the last question, they will see a page that tells them h
 ### To Start Playing
 
 Go to [this page](https://carmcollins.github.io/trivia-game/) and press the start button to begin playing!
+
+<img src="assets/images/game.png">
